@@ -19,13 +19,13 @@ public class BookServiceImpl implements BookService{
 
     @Override
     @Transactional
-    public List<Book> getBooks() {
+    public List<Book> getAllBooks() {
         return bookDAO.getAllBooks();
     }
 
     @Override
     @Transactional
-    public Book getBookByIsbn(String isbn) {
+    public Book getByIsbn(String isbn) {
         Book book = bookDAO.getByIsbn(isbn);
 
         if (book == null) {
@@ -37,7 +37,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     @Transactional
-    public void addBook(Book book) {
+    public void create(Book book) {
 
         validateBook(book);
 
@@ -46,7 +46,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     @Transactional
-    public void updateBook(Book book) {
+    public void update(Book book) {
 
         Book updatedBook = this.bookDAO.getByIsbn(book.getIsbn());
         if(book == null) {
@@ -64,7 +64,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     @Transactional
-    public void deleteBook(String isbn) {
+    public void deleteByIsbn(String isbn) {
 
         Book book = bookDAO.getByIsbn(isbn);
 

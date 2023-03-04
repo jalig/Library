@@ -18,24 +18,24 @@ public class RestControllerBook {
 
     @GetMapping("/api/book")
     public List<Book> getBooks() {
-        return bookService.getBooks();
+        return bookService.getAllBooks();
     }
 
     @PostMapping("/api/book")
     public Book addBook(@RequestBody Book book) {
-        bookService.addBook(book);
+        bookService.create(book);
         return book;
     }
 
     @PutMapping("/api/book")
     public Book updateBook(@RequestBody Book book) {
-        bookService.updateBook(book);
+        bookService.update(book);
         return book;
     }
 
     @DeleteMapping("/api/book")
     public String deleteBook(@RequestParam String isbn) {
-        bookService.deleteBook(isbn);
+        bookService.deleteByIsbn(isbn);
         return "Book with isbn= " + isbn + " was deleted";
     }
 

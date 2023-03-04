@@ -5,10 +5,10 @@ import com.skypro.library.model.Book;
 import java.util.List;
 
 public interface BookService {
-    List<Book> getBooks();
-    Book getBookByIsbn(String isbn);
-    void addBook(Book book);
-    void updateBook(Book book);
-    void deleteBook(String isbn);
+    public void create(Book book);
+    public Book getByIsbn(String isbn);
+    public List<Book> getAllBooks();
+    public void update(Book book);
+    public void deleteByIsbn(String isbn);
 
 }
