@@ -28,17 +28,12 @@ public class SpringSecurityConfiguration {
     @Bean
     public UserDetailsService users() {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
-        UserDetails user = users
-                .username("user")
-                .password("user")
-                .roles("USER")
-                .build();
         UserDetails admin = users
                 .username("admin")
                 .password("admin")
                 .roles("USER", "ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager(admin);
     }
 
 }

@@ -18,12 +18,8 @@ public class SpringMVCController {
     }
 
     @RequestMapping("/web")
-    public String getBooks(Model model, Book book) {
+    public String getBooks(Model model) {
         model.addAttribute("books", bookservice.getAllBooks());
-        model.addAttribute("title", book.getTitle());
-        model.addAttribute("author", book.getAuthor());
-        model.addAttribute("isbn", book.getIsbn());
-        model.addAttribute("year", book.getYear());
         return "dashboard";
     }
 

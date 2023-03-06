@@ -13,12 +13,6 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, Integer year) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -64,13 +58,4 @@ public class Book {
         return Objects.hash(title, author, year, isbn);
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", year=" + year +
-                ", isbn='" + isbn + '\'' +
-                '}';
-    }
 }
